@@ -18,12 +18,11 @@ export default function LoggedInUser() {
 
   const handleLike = (postId: string, postOwner: string) => {
     console.log(`El post ${postId} fue dado like por el usuario ${user?.uid}`);
-    sendNotification(postOwner, "liked", postId, user);  // Agregar el postId y el user al enviar la notificación
+    sendNotification(postOwner, "liked", postId, user);
   
-    // Actualizar el estado de likedPosts
     setLikedPosts((prev) => ({
       ...prev,
-      [postId]: !prev[postId],  // Cambia el estado de like/dislike
+      [postId]: !prev[postId],
     }));
   };
   
@@ -31,7 +30,7 @@ export default function LoggedInUser() {
     console.log(
       `El post ${postId} fue dado dislike por el usuario ${user?.uid}`
     );
-    sendNotification(postOwner, "disliked", postId, user);  // Agregar el postId y el user al enviar la notificación
+    sendNotification(postOwner, "disliked", postId, user);
   };
   
 
@@ -167,7 +166,6 @@ export default function LoggedInUser() {
           )}
 
           <div className="flex gap-3 mt-2">
-            {/* Botones con iconos */}
             <Button
               onClick={() => handleLike(post.id, post.uid)}
               className={`flex items-center gap-2 ${likedPosts[post.id] ? 'bg-blue-500 text-white' : 'bg-gray-200 text-black'}`}

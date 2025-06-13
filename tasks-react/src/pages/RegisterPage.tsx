@@ -36,9 +36,9 @@ export const RegisterPage = () => {
         data.email,
         data.password,
         data.fullname,
-        data.address,
         data.birthdate,
-        data.age
+        data.age,
+        data.address,
       );
     } catch (error: any) {
       console.error("Error al registrar:", error);

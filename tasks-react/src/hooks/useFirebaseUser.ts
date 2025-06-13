@@ -59,9 +59,9 @@ export const useFirebaseUser = () => {
     email: string,
     password: string,
     fullName: string,
-    address: string,
     birthdate: string,
-    age: number
+    age: number,
+    address: string
   ) => {
     try {
       const userCredential = await createUserWithEmailAndPassword(
