@@ -45,7 +45,7 @@ export const ProfilePage = () => {
 
   return (
     <>
-      <Menu />
+      {/* <Menu /> */}
       <Container>
         <Card className="my-6" title="Perfil del Usuario">
           <div className="space-y-3">
