@@ -2,15 +2,15 @@ import { useState } from "react";
 import Button from "../../components/Button";
 import { Input } from "../../components/Input";
 import { useFirebaseUser } from "../../hooks/useFirebaseUser";
-import { usePostRepository } from "../../hooks/usePostRepository";
 import { uploadToCloudinary } from "../../utils/uploadToCloudinary";
 import { moderateText } from "../../utils/moderationUtils";
 import { FaThumbsUp, FaThumbsDown } from "react-icons/fa";
 import { sendNotification } from "../../hooks/useNotifications";
+import { usePostRepo } from "../../hooks/usePostRepo";
 
 export default function LoggedInUser() {
   const { user } = useFirebaseUser();
-  const { posts, createPost, deletePost } = usePostRepository();
+  const { posts, createPost, deletePost } = usePostRepo();
   const [content, setContent] = useState("");
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [previewImage, setPreviewImage] = useState<string | null>(null);
@@ -165,7 +165,7 @@ export default function LoggedInUser() {
             />
           )}
 
-          <div className="flex gap-3 mt-2">
+          {/* <div className="flex gap-3 mt-2">
             <Button
               onClick={() => handleLike(post.id, post.uid)}
               className={`flex items-center gap-2 ${likedPosts[post.id] ? 'bg-blue-500 text-white' : 'bg-gray-200 text-black'}`}
@@ -180,7 +180,7 @@ export default function LoggedInUser() {
               <FaThumbsDown />
               Dislike
             </Button>
-          </div>
+          </div> */}
 
           {user?.uid === post.uid && (
             <Button

@@ -11,7 +11,7 @@ const HomePage = () => {
   return (
     <>
       {user ? <MenuLogged /> : <Menu />}
-      <Container>{user ? <ProfilePage /> : <GuestUser />}</Container>
+      <Container>{user ? <LoggedInUser /> : <GuestUser />}</Container>
     </>
   );
 };
