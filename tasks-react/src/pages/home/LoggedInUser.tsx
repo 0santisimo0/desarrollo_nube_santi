@@ -165,23 +165,6 @@ export default function LoggedInUser() {
             />
           )}
 
-          {/* <div className="flex gap-3 mt-2">
-            <Button
-              onClick={() => handleLike(post.id, post.uid)}
-              className={`flex items-center gap-2 ${likedPosts[post.id] ? 'bg-blue-500 text-white' : 'bg-gray-200 text-black'}`}
-            >
-              <FaThumbsUp />
-              Like
-            </Button>
-            <Button
-              onClick={() => handleDislike(post.id, post.uid)}
-              className="flex items-center gap-2"
-            >
-              <FaThumbsDown />
-              Dislike
-            </Button>
-          </div> */}
-
           {user?.uid === post.uid && (
             <Button
               onClick={() => deletePost(post.id)}
